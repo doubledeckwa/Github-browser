@@ -53,16 +53,8 @@ const RootComponent = (props) => {
         <Startup>
           <Switch>
             <Route exact path="/" component={() => <Home setUser={setUser} />} />
-            <Route
-              exact
-              path="/:userName"
-              component={() => <Repo user={user} setRepo={setRepo} />}
-            />
-            <Route
-              exact
-              path="/:userName/:repositoryName"
-              component={() => <Readme user={user} repo={repo} />}
-            />
+            <Route exact path="/:userName" component={() => <Repo user={user} setRepo={setRepo} />} />
+            <Route exact path="/:userName/:repositoryName" component={() => <Readme user={user} repo={repo} />} />
             <PrivateRoute exact path="/hidden-route" component={DummyView} />
             <OnlyAnonymousRoute exact path="/anonymous-route" component={DummyView} />
 
